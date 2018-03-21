@@ -23,6 +23,8 @@ body {
   width: 12%;
   padding: 15px;
 }
+
+
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
@@ -114,6 +116,15 @@ li > label {
     display: flex;
     flex-direction: column-reverse;
   }
+.ssk-group, .ssk-sticky {
+  /* font-size: 0; */
+  position: static;
+  margin-left: 20%;
+  /* top: 500px; */
+  /* *\/ bottom: 70px; */
+  /* border: 2px solid #8EC549; */
+  /* border-radius: 10px; */
+}
 
   #manifiesto {
   box-shadow: 5px 10px 18px #888888;
