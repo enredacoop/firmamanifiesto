@@ -9,6 +9,7 @@ body {
   font-family: 'Lato', sans-serif;
   margin-bottom: 60px;
   margin-top:60px;
+  background-color: #d3c6c633;
 }
 .footer {
   position: absolute;
@@ -66,13 +67,15 @@ li > label {
   margin-bottom: 50px;
   padding: 20px 40px 40px 40px;
   margin-left: 20px;
+  background-color: #fff;
 }
 
 #apoya {
   position: fixed;
   right: 40px;
   bottom: 110px;
-  border: 2px solid #8EC549;
+  border: 2px solid #8EC548;
+  background-color: #fff;
   border-radius:10px;
 }
 
