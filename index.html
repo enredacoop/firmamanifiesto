@@ -6,23 +6,28 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sticky Footer Navbar Template for Bootstrap</title>
+    <title>Sevilla X El Cambio</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="include/css/bootstrap.min.css" rel="stylesheet">
     <!-- Mailchimp CSS -->
-    <link href="css/mailchimp.css" rel="stylesheet">
-
+    <link href="include/css/mailchimp.css" rel="stylesheet">
+    <!-- Lato font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!-- Social Share Kit CSS -->
+    <link rel="stylesheet" href="include/css/social-share-kit.css" type="text/css">
     <!-- Custom styles for this template -->
-    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="include/css/sticky-footer-navbar.css" rel="stylesheet">
+    <meta property="og:site_name" content="Sevilla X El Cambio">
+    <meta property="og:image" content="include/images/logo-transparente.png">
   </head>
 
   <body>
 
    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
-        <div class="navbar-header">
-        <img src="http://via.placeholder.com/200x100"/>
+        <div class="navbar-header text-center">
+        <img src="include/images/logo-transparente.png"/>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -32,7 +37,7 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div class="row" id="text-manifiest">
         <div class="col-md-7 text-justify" id="manifiesto">
-          <h2>CONFLUIR PARA EL CAMBIO EN SEVILLA</h2>
+          <h2>Confluir para el cambio en Sevilla</h2>
           <p>Sevilla, la cuarta ciudad con más población de todo el Estado, necesita un cambio
   político que aborde las graves carencias que padece. Un cambio que desde una
   perspectiva progresista ponga a las personas en el eje de las políticas municipales.
@@ -82,8 +87,7 @@
   <li>Una ciudad libre de desahucios, que posibilite el acceso a una vivienda digna.</li>
   <li>Una ciudad de los barrios que acabe con las desigualdades existentes en recursos y servicios.</li>
         </div>
-        <div class="col-md-4 col-md-offset-1">
-          <h3 class="text-center"> Apoya la candidatura </h3>
+        <div class="col-md-4 col-md-offset-1" id="apoya">
           <!-- Begin MailChimp Signup Form -->
           <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
           <style type="text/css">
@@ -112,8 +116,7 @@
             <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
           </div>
           <div class="mc-field-group input-group">
-              <strong>Mostrar mi apoyo  <span class="asterisk">*</span>
-          </strong>
+              <label><strong>Mostrar mi apoyo  <span class="asterisk">*</span></strong></label>
               <ul><li><input type="radio" value="Público" name="SUPPORT" id="mce-SUPPORT-0"><label for="mce-SUPPORT-0">Público</label></li>
           <li><input type="radio" value="Privado" name="SUPPORT" id="mce-SUPPORT-1"><label for="mce-SUPPORT-1">Privado</label></li>
           </ul>
@@ -123,12 +126,21 @@
               <div class="response" id="mce-success-response" style="display:none"></div>
             </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
               <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c9cf8c1f269ce80cc42e1289b_3cb232708a" tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="Enviar" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+              <div class="clear text-center"><input type="submit" value="Firmar el manifiesto" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
               </div>
           </form>
           </div>
 
           <!--End mc_embed_signup-->
+        </div>
+        <div class="ssk-xs ssk-group" data-url="http//my-url" data-text="¿Conoces sevillaXelcambio? +Info en www.sevillaxelcambio.info">
+            <span class="text-muted"> Compartir: </span>
+            <a href="" class="ssk ssk-facebook"></a>
+            <a href="" class="ssk ssk-twitter"></a>
+            <a href="" class="ssk ssk-google-plus"></a>
+            <a href="" class="ssk ssk-email"></a>
+            <a href="" class="ssk ssk-whatsapp"></a>
+            <a href="" class="ssk ssk-link"></a>
         </div>
       </div>
 
@@ -136,7 +148,7 @@
 
     <footer class="footer">
       <div class="container text-center">
-        <span class="text-muted">Place sticky footer content here.</span>
+        <img src="include/images/logo-transparente.png"/>
       </div>
     </footer>
 
@@ -145,7 +157,15 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="js/vendor/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="include/js/vendor/popper.min.js"></script>
+    <script src="include/js/bootstrap.min.js"></script>
+    <!-- Social Share Kit JS -->
+    <script type="text/javascript" src="include/js/social-share-kit.js"></script>
   </body>
+
+  <script type="text/javascript">
+  SocialShareKit.init({
+      
+  });  
+  </script>
 </html>
