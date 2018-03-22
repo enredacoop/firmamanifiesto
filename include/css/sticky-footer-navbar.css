@@ -49,7 +49,7 @@ code {
   font-size: 0;
   position: fixed;
   right: 15%;
-  bottom: 65px;
+  bottom: 150px;
   /* border: 2px solid #8EC549; */
   /* border-radius: 10px; */
 }
@@ -73,7 +73,7 @@ li > label {
 #apoya {
   position: fixed;
   right: 40px;
-  bottom: 110px;
+  bottom: 200px;
   border: 2px solid #8EC548;
   background-color: #fff;
   border-radius:10px;
