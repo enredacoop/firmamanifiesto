@@ -73,10 +73,17 @@ li > label {
 #apoya {
   position: fixed;
   right: 40px;
-  bottom: 200px;
   border: 2px solid #8EC548;
   background-color: #fff;
   border-radius:10px;
+}
+
+#firmas {
+  background: #fff;
+  border: 2px solid #8EC548;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 0px 0px 20px 0px;
 }
 
 .navbar-default {
@@ -98,7 +105,7 @@ li > label {
   }
   #apoya {
   border: 2px solid #8EC549;
-  margin: -30px 10px 50px 10px;
+  margin: 20px 10px 50px 10px;
   top: -30px;
   position: static;
   }

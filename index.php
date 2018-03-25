@@ -16,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!-- Social Share Kit CSS -->
     <link rel="stylesheet" href="include/css/social-share-kit.css" type="text/css">
+    <link rel="stylesheet" href="
+    https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" type="text/css">
     <!-- Custom styles for this template -->
     <link href="include/css/sticky-footer-navbar.css" rel="stylesheet">
     <meta property="og:site_name" content="Sevilla X El Cambio">
@@ -37,7 +39,7 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div class="row" id="text-manifiest">
         <div class="col-md-7 text-justify" id="manifiesto">
-          <h2>Confluir para el cambio en Sevilla</h2>
+          <h2>Confluir para el cambio en Sevilla</h2><br/>
           <p>Sevilla, la cuarta ciudad con más población de todo el Estado, necesita un cambio
   político que aborde las graves carencias que padece. Un cambio que desde una
   perspectiva progresista ponga a las personas en el eje de las políticas municipales.
@@ -69,10 +71,10 @@
   esperanza de futuro para las sevillanas y sevillanos. Hay que hacerlo.</p>
 
   <strong>DIEZ EJES PARA PENSAR EL CAMBIO</strong>
-  <p>Un modelo de ciudad al servicio de las personas. Una economía alternativa y solidaria que
-  aborde desde el respeto a los derechos humanos las necesidades de las personas, generando
-  empleo sostenible, estable y de calidad.</p>
   <ul>
+  <li>Un modelo de ciudad al servicio de las personas. Una economía alternativa y solidaria que
+  aborde desde el respeto a los derechos humanos las necesidades de las personas, generando
+  empleo sostenible, estable y de calidad.</li>
   <li>Una ciudad ecologista, habitable, accesible, inteligente... que proteja la biodiversidad, apueste
   por energías limpias, promueva el reciclaje e impulse una movilidad sostenible.</li>
   <li>Una ciudad feminista que luche activamente contra la violencia machista y el patriarcado</li>
@@ -105,7 +107,6 @@
 <div id="mc_embed_signup">
 <form action="https://participasevilla.us15.list-manage.com/subscribe/post?u=c9cf8c1f269ce80cc42e1289b&amp;id=3cb232708a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
-
 <div class="indicates-required"><span class="asterisk">*</span> campo requerido</div>
 <div class="mc-field-group">
   <label for="mce-FNAME">Nombre y apellidos<span class="asterisk">*</span>
@@ -150,54 +151,23 @@
         </div>
       </div>
 
-      <?php
+        <div class="row" id="firmas">
+          <table id="example" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Entidad</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Entidad</th>
 
-      $api_key = '';
-      $list_id = '';
-
-      $dc = substr($api_key,strpos($api_key,'-')+1);
-
-      $url = 'https://'.$dc.'.api.mailchimp.com/3.0/lists/'.$list_id.'/members';
-      $body = json_decode(rudr_mailchimp_curl_connect($url, 'GET', $api_key, $data));
-
-      foreach ($body->members as $member) {
-      	if ($member->merge_fields->SUPPORT!='No')  {
-      		$resultado[] = array(Nombre=>$member->merge_fields->FNAME, Entidad=>$member->merge_fields->ENTITY);
-      	  echo "Nombre: " . $member->merge_fields->FNAME . " ";
-      	  echo "Entidad: " . $member->merge_fields->ENTITY . " ";
-      	  echo "<br>";
-      	}
-      }
-
-
-
-      function rudr_mailchimp_curl_connect( $url, $request_type, $api_key, $data = array() ) {
-      	if( $request_type == 'GET' )
-      		$url .= '?' . http_build_query($data);
-
-      	$mch = curl_init();
-      	$headers = array(
-      		'Content-Type: application/json',
-      		'Authorization: Basic '.base64_encode( 'user:'. $api_key )
-      	);
-      	curl_setopt($mch, CURLOPT_URL, $url );
-      	curl_setopt($mch, CURLOPT_HTTPHEADER, $headers);
-      	//curl_setopt($mch, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0');
-      	curl_setopt($mch, CURLOPT_RETURNTRANSFER, true); // do not echo the result, write it into variable
-      	curl_setopt($mch, CURLOPT_CUSTOMREQUEST, $request_type); // according to MailChimp API: POST/GET/PATCH/PUT/DELETE
-      	curl_setopt($mch, CURLOPT_TIMEOUT, 10);
-      	curl_setopt($mch, CURLOPT_SSL_VERIFYPEER, false); // certificate verification for TLS/SSL connection
-
-      	if( $request_type != 'GET' ) {
-      		curl_setopt($mch, CURLOPT_POST, true);
-      		curl_setopt($mch, CURLOPT_POSTFIELDS, json_encode($data) ); // send data in json
-      	}
-
-      	return curl_exec($mch);
-      }
-
-      ?>
-
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     </div> <!-- /container -->
 
     <footer class="footer">
@@ -215,8 +185,76 @@
     <script src="include/js/bootstrap.min.js"></script>
     <!-- Social Share Kit JS -->
     <script type="text/javascript" src="include/js/social-share-kit.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>  
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> 
   </body>
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('#example').DataTable( {
+            "language": {
+            "sProcessing":     "Procesando...",
+            "sLengthMenu":     "Mostrar _MENU_ firmantes",
+            "sZeroRecords":    "No se encontraron resultados",
+            "sEmptyTable":     "Ningún dato disponible en esta tabla",
+            "sInfo":           "_START_-_END_ de _TOTAL_ firmantes",
+            "sInfoEmpty":      "",
+            "sInfoFiltered":   "(filtrado de un total de _MAX_ firmantes)",
+            "sInfoPostFix":    "",
+            "sSearch":         "Buscar:",
+            "sUrl":            "",
+            "sInfoThousands":  ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst":    "Primero",
+                "sLast":     "Último",
+                "sNext":     "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            }
+        },
+       "ajax": {
+            "url": "data.php",
+            "dataSrc": ""
+        },
+        "columns": [
+            { "data": "Nombre" },
+            { "data": "Entidad" }
+        ]
+    } );
+} );
 
+    var windw = this;
+
+$.fn.followTo = function ( pos ) {
+    var $this = this,
+        $window = $(windw);
+    $window.scroll(function(e){
+        if ($(window).width() >= 600) {
+          if ($window.scrollTop() > pos) {
+              $this.css({
+                  position: 'absolute',
+                  bottom: '30em'
+              });
+              $('.ssk-group').css({
+                    position: 'absolute',
+                    bottom: -50
+                });
+          } else {
+              $this.css({
+                  position: 'fixed',
+                  bottom: 220
+              });
+          }
+        }
+    });
+};
+$limit = $('#firmas').offset().top - 200;
+console.log($limit);
+$('#apoya').followTo($limit/2);
+</script>
   <script type="text/javascript">
   SocialShareKit.init({
 
