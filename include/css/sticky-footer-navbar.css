@@ -9,7 +9,8 @@ body {
   font-family: 'Lato', sans-serif;
   margin-bottom: 60px;
   margin-top:60px;
-  background-color: #d3c6c633;
+  background-color: #ff;f
+  
 }
 .footer {
   position: absolute;
@@ -73,16 +74,14 @@ li > label {
 #apoya {
   position: fixed;
   right: 40px;
-  border: 2px solid #8EC548;
   background-color: #fff;
-  border-radius:10px;
 }
-
+#apoya #title{
+  font-weight: bold;
+}
 #firmas {
   background: #fff;
-  border: 2px solid #8EC548;
   padding: 30px;
-  border-radius: 10px;
   margin: 0px 0px 20px 0px;
 }
 
@@ -104,9 +103,7 @@ li > label {
     width: 85%;
   }
   #apoya {
-  border: 2px solid #8EC549;
   margin: 20px 10px 50px 10px;
-  top: -30px;
   position: static;
   }
   .ssk-group, .ssk-sticky {
@@ -124,7 +121,7 @@ li > label {
 }
   #text-manifiest {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 .ssk-group, .ssk-sticky {
   position: static;

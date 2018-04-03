@@ -1,16 +1,13 @@
 <?php
-
       $api_key = '';
       $list_id = '';
 
       $dc = substr($api_key,strpos($api_key,'-')+1);
-
       $url = 'https://'.$dc.'.api.mailchimp.com/3.0/lists/'.$list_id.'/members';
-      $body = json_decode(rudr_mailchimp_curl_connect($url, 'GET', $api_key, $data));
-
+      $body = json_decode(rudr_mailchimp_curl_connect($url, 'GET', $api_key));
       foreach ($body->members as $member) {
         if ($member->merge_fields->SUPPORT!='No')  {
-            $resultado[] = array(Nombre=>$member->merge_fields->FNAME, Entidad=>$member->merge_fields->ENTITY);
+            $resultado[] = array(Nombre=>$member->merge_fields->FNAME);
           // echo "Nombre: " . $member->merge_fields->FNAME . " ";
           // echo "Entidad: " . $member->merge_fields->ENTITY . " ";
           // echo "<br>";
