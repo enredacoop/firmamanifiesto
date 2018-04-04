@@ -50,7 +50,7 @@ code {
   font-size: 0;
   position: fixed;
   right: 15%;
-  bottom: 150px;
+  /*bottom: 150px;*/
   /* border: 2px solid #8EC549; */
   /* border-radius: 10px; */
 }
@@ -76,8 +76,9 @@ li > label {
   right: 40px;
   background-color: #fff;
 }
-#apoya #title{
+#apoya #title, #firmas #title{
   font-weight: bold;
+  font-size: 17px;
 }
 #firmas {
   background: #fff;
