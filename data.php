@@ -3,7 +3,7 @@
       $list_id = '';
 
       $dc = substr($api_key,strpos($api_key,'-')+1);
-      $url = 'https://'.$dc.'.api.mailchimp.com/3.0/lists/'.$list_id.'/members';
+      $url = 'https://'.$dc.'.api.mailchimp.com/3.0/lists/'.$list_id.'/members?count=2000&offset=';
       $body = json_decode(rudr_mailchimp_curl_connect($url, 'GET', $api_key));
       foreach ($body->members as $member) {
         if ($member->merge_fields->SUPPORT!='No')  {
